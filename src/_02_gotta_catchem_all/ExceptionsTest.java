@@ -30,9 +30,18 @@ class ExceptionsTest {
 	//   should throw an IllegalArgumentException if the denominator is 0.0.
 	
 	//3. Complete the JUnit test method to test the divide method.
+	ExceptionMethods m = new ExceptionMethods();
 	@Test
+	
 	public void testDivideByZeroException() {
-		
+		try {
+			assertEquals(2,m.divide(6, 3) );
+			m.divide(4, 0);
+			fail("divide 0");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			
+		}
 	}
 	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
@@ -42,7 +51,14 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		try {
+			assertEquals("racecar",m.reverseString("racecar"));
+			m.reverseString("");
+			fail("length 0");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
